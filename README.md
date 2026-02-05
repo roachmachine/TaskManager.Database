@@ -37,9 +37,9 @@ Application users with organization/program membership.
 
 ### Task Management Tables :white_check_mark:
 
-#### **Task** :memo:
+#### **UserTask** :memo:
 Core task entity.
-- Primary Key: `TaskID`
+- Primary Key: `UserTaskID`
 - Foreign Keys: `UserID`, `RecurrenceID` (nullable)
 - Stores `LocalTime` for task execution (time-only, uses User's timezone)
 - Optional `TaskDescription` for detailed information
@@ -48,12 +48,12 @@ Core task entity.
 - Indexed on `UserID`, `RecurrenceID`, and `StartDate`
 
 #### **TaskSteps** :receipt:
-Sub-tasks or checklist items for a Task.
+Sub-tasks or checklist items for a UserTask.
 - Primary Key: `TaskStepID`
-- Foreign Key: `TaskID` (CASCADE delete)
+- Foreign Key: `UserTaskID` (CASCADE delete)
 - `StepOrder` determines display sequence
 - Tracks completion status via `IsCompleted` and `CompletedDate`
-- Unique constraint on `TaskID` + `StepOrder`
+- Unique constraint on `UserTaskID` + `StepOrder`
 
 #### **TaskRecurrence** :repeat:
 Defines recurrence patterns for tasks.
@@ -157,10 +157,10 @@ Performance indexes are created on:
 ## Data Integrity :lock:
 
 ### Foreign Key Cascade Rules :link:
-- **TaskSteps ? Task**: CASCADE delete (steps deleted with task)
+- **TaskSteps ? UserTask**: CASCADE delete (steps deleted with task)
 - **TaskRecurrenceDays ? TaskRecurrence**: CASCADE delete
 - **TaskNotification ? TaskRecurrence**: CASCADE delete
-- **Task ? TaskRecurrence**: SET NULL (task remains if recurrence deleted)
+- **UserTask ? TaskRecurrence**: SET NULL (task remains if recurrence deleted)
 
 ### CHECK Constraints :test_tube:
 - `DayOfWeek` between 0-6
@@ -175,7 +175,7 @@ All major entities support soft-delete via `IsActive` flag:
 - Organization
 - Program
 - User
-- Task
+- UserTask
 
 ## Audit Trail :clock3:
 All tables include:
