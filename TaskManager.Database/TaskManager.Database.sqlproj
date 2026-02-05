@@ -75,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Reference\UserTypes.sql" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Data\Script.PostDeployment.sql" />
