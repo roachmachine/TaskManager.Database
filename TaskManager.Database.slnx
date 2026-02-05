@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TaskManager.Database/TaskManager.Database.sqlproj" Id="cc8fc7cf-c086-46ac-bcc6-59793d3fa60b">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
