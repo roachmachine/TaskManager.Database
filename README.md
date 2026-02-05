@@ -2,6 +2,7 @@
 
 ## Overview :pushpin:
 SQL Server Database Project for a task management application with support for recurring tasks, notifications, and multi-tenant organization structure.
+Includes major functionality to support daylight savings time and crossing time zones.
 
 ## Database Schema :bricks:
 
