@@ -66,8 +66,8 @@
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Organization.sql" />
     <Build Include="dbo\Tables\UserType.sql" />
-    <Build Include="dbo\Tables\Program.sql" />
-    <Build Include="dbo\Tables\Task.sql" />
+    <Build Include="dbo\Tables\OrgProgram.sql" />
+    <Build Include="dbo\Tables\UserTask.sql" />
     <Build Include="dbo\Tables\TaskRecurrence.sql" />
     <Build Include="dbo\Tables\TaskRecurrenceDays.sql" />
     <Build Include="dbo\Tables\TaskNotification.sql" />
@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Reference\UserTypes.sql" />
+    <None Include="Data\Reference\User.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Data\Script.PostDeployment.sql" />
